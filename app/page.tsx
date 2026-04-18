@@ -13,7 +13,7 @@ export default function Home() {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
                 </svg>
               </div>
-              <span className="text-xl font-bold text-slate-900">FuelImpact</span>
+              <span className="text-xl font-bold text-slate-900">Fuel Impact</span>
             </div>
             <div className="flex items-center gap-4">
               <span className="text-sm font-medium text-slate-600 hidden sm:block">Follow me:</span>
