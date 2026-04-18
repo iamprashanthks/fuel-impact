@@ -1,0 +1,18 @@
+FuelImpact is a free web-based fuel cost calculator designed for users in India.
+
+It helps users:
+- Calculate daily, monthly, yearly fuel expenses
+- Understand how fuel costs impact their income
+- Make better financial decisions
+
+Key Features:
+- Fuel cost calculation
+- Income percentage analysis
+- Insight-based recommendations
+
+Use cases:
+- Personal finance planning
+- Transportation cost estimation
+- Budget optimization
+
+Website: https://fuel-impact.vercel.app/

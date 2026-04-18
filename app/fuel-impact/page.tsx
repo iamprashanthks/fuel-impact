@@ -39,6 +39,12 @@ export default function FuelImpactPage() {
               <p className="text-xl text-gray-700 leading-relaxed mb-8">
                 Ever wondered what percentage of your hard-earned salary is going towards fuel expenses? Our fuel impact calculator shows you exactly how much of your income is spent on transportation costs and provides insights to help you save money.
               </p>
+
+              <div className="mb-8 p-4 bg-green-50 border border-green-200 rounded-xl">
+                <p className="text-green-800 font-medium">
+                  💡 Want to calculate your exact monthly fuel expenses? <a href="/fuel-expense" className="text-green-600 hover:text-green-800 underline">Try our Fuel Expense Calculator →</a>
+                </p>
+              </div>
             </div>
           </div>
         </div>

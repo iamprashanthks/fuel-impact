@@ -65,11 +65,13 @@ export default function Home() {
 
               <div className="space-y-6">
                 <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight text-slate-950 leading-[1.1]">
-                  Understand your fuel impact,
-                  <span className="block text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-700">and stay ahead of rising prices.</span>
+                  Fuel Cost Impact Calculator
                 </h1>
+                <h2 className="text-2xl md:text-3xl font-semibold text-slate-700">
+                  Know how much fuel is costing your income
+                </h2>
                 <p className="text-xl text-slate-600 max-w-2xl leading-relaxed">
-                  Track your daily, monthly, and yearly fuel expenses with precision. Compare historic prices and fuel market volatility so you can make smarter commuting decisions.
+                  Fuel prices are rising, and many people don't realize how much they actually spend on petrol every month. FuelImpact helps you calculate your fuel expenses and understand how it affects your income, so you can make smarter financial decisions.
                 </p>
               </div>
 
@@ -160,6 +162,170 @@ export default function Home() {
         </div>
       </section>
 
+      {/* TL;DR Section */}
+      <section className="py-12 px-6 bg-gradient-to-r from-blue-50 to-purple-50">
+        <div className="max-w-4xl mx-auto text-center">
+          <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-8 shadow-lg">
+            <h3 className="text-2xl font-bold text-gray-900 mb-4">TL;DR</h3>
+            <p className="text-lg text-gray-700 leading-relaxed">
+              FuelImpact helps you calculate how much you spend on fuel daily, monthly, and yearly.
+              It also shows what percentage of your income goes into fuel and gives actionable insights to reduce your expenses.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* How it works Section */}
+      <section className="py-20 px-6 bg-white/50 backdrop-blur-sm">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+              How it works
+            </h2>
+          </div>
+          <div className="grid md:grid-cols-4 gap-8">
+            <div className="text-center">
+              <div className="w-16 h-16 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full flex items-center justify-center mx-auto mb-4 text-white font-bold text-xl">1</div>
+              <h3 className="text-lg font-semibold text-gray-900 mb-2">Enter your daily travel distance</h3>
+            </div>
+            <div className="text-center">
+              <div className="w-16 h-16 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full flex items-center justify-center mx-auto mb-4 text-white font-bold text-xl">2</div>
+              <h3 className="text-lg font-semibold text-gray-900 mb-2">Enter your vehicle mileage</h3>
+            </div>
+            <div className="text-center">
+              <div className="w-16 h-16 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full flex items-center justify-center mx-auto mb-4 text-white font-bold text-xl">3</div>
+              <h3 className="text-lg font-semibold text-gray-900 mb-2">Enter current fuel price</h3>
+            </div>
+            <div className="text-center">
+              <div className="w-16 h-16 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full flex items-center justify-center mx-auto mb-4 text-white font-bold text-xl">4</div>
+              <h3 className="text-lg font-semibold text-gray-900 mb-2">Get instant results</h3>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* What you'll discover Section */}
+      <section className="py-20 px-6">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+              What you'll discover
+            </h2>
+          </div>
+          <div className="grid md:grid-cols-4 gap-8">
+            <div className="text-center p-6 bg-white rounded-2xl shadow-lg">
+              <div className="w-12 h-12 bg-gradient-to-r from-green-500 to-emerald-500 rounded-xl flex items-center justify-center mx-auto mb-4">
+                <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+                </svg>
+              </div>
+              <h3 className="text-xl font-semibold text-gray-900 mb-2">Daily fuel cost</h3>
+            </div>
+            <div className="text-center p-6 bg-white rounded-2xl shadow-lg">
+              <div className="w-12 h-12 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-xl flex items-center justify-center mx-auto mb-4">
+                <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                </svg>
+              </div>
+              <h3 className="text-xl font-semibold text-gray-900 mb-2">Monthly petrol expense</h3>
+            </div>
+            <div className="text-center p-6 bg-white rounded-2xl shadow-lg">
+              <div className="w-12 h-12 bg-gradient-to-r from-purple-500 to-pink-500 rounded-xl flex items-center justify-center mx-auto mb-4">
+                <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+                </svg>
+              </div>
+              <h3 className="text-xl font-semibold text-gray-900 mb-2">Yearly fuel spending</h3>
+            </div>
+            <div className="text-center p-6 bg-white rounded-2xl shadow-lg">
+              <div className="w-12 h-12 bg-gradient-to-r from-orange-500 to-red-500 rounded-xl flex items-center justify-center mx-auto mb-4">
+                <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z" />
+                </svg>
+              </div>
+              <h3 className="text-xl font-semibold text-gray-900 mb-2">Percentage of income spent on fuel</h3>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Why this matters Section */}
+      <section className="py-20 px-6 bg-white/50 backdrop-blur-sm">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+              Why this matters
+            </h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              Fuel is one of the biggest recurring expenses for individuals and businesses. In India, fuel contributes significantly to transportation and logistics costs, making it a critical financial factor.
+            </p>
+          </div>
+          <div className="grid md:grid-cols-3 gap-8">
+            <div className="text-center p-6 bg-white rounded-2xl shadow-lg">
+              <div className="w-12 h-12 bg-gradient-to-r from-green-500 to-emerald-500 rounded-xl flex items-center justify-center mx-auto mb-4">
+                <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+                </svg>
+              </div>
+              <h3 className="text-xl font-semibold text-gray-900 mb-2">Optimize travel</h3>
+              <p className="text-gray-600">Reduce unnecessary expenses by understanding your fuel consumption patterns.</p>
+            </div>
+            <div className="text-center p-6 bg-white rounded-2xl shadow-lg">
+              <div className="w-12 h-12 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-xl flex items-center justify-center mx-auto mb-4">
+                <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+                </svg>
+              </div>
+              <h3 className="text-xl font-semibold text-gray-900 mb-2">Plan better financial decisions</h3>
+              <p className="text-gray-600">Make informed choices about transportation and budget allocation.</p>
+            </div>
+            <div className="text-center p-6 bg-white rounded-2xl shadow-lg">
+              <div className="w-12 h-12 bg-gradient-to-r from-purple-500 to-pink-500 rounded-xl flex items-center justify-center mx-auto mb-4">
+                <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+              </div>
+              <h3 className="text-xl font-semibold text-gray-900 mb-2">Save money</h3>
+              <p className="text-gray-600">Discover cost-saving opportunities and alternative transportation options.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* AEO Q&A Section */}
+      <section className="py-20 px-6">
+        <div className="max-w-4xl mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+              Frequently Asked Questions
+            </h2>
+          </div>
+          <div className="space-y-8">
+            <div className="bg-white rounded-2xl shadow-lg p-8">
+              <h3 className="text-xl font-semibold text-gray-900 mb-4">How do I calculate fuel cost per month?</h3>
+              <p className="text-gray-600 mb-4">Fuel cost per month is calculated using: (Distance ÷ Mileage) × Fuel Price × Days</p>
+            </div>
+            <div className="bg-white rounded-2xl shadow-lg p-8">
+              <h3 className="text-xl font-semibold text-gray-900 mb-4">How much of my salary should go to fuel?</h3>
+              <p className="text-gray-600 mb-4">Ideally, fuel expenses should be less than 10% of your monthly income. If it exceeds that, it may impact your financial health.</p>
+            </div>
+            <div className="bg-white rounded-2xl shadow-lg p-8">
+              <h3 className="text-xl font-semibold text-gray-900 mb-4">How can I reduce fuel expenses?</h3>
+              <ul className="text-gray-600 space-y-2">
+                <li>• Reduce daily travel distance</li>
+                <li>• Use public transport</li>
+                <li>• Improve driving efficiency</li>
+                <li>• Consider electric vehicles</li>
+              </ul>
+            </div>
+            <div className="bg-white rounded-2xl shadow-lg p-8">
+              <h3 className="text-xl font-semibold text-gray-900 mb-4">Why are fuel prices increasing?</h3>
+              <p className="text-gray-600">Fuel prices are affected by global oil supply, geopolitical events, and demand fluctuations.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Calculator Section */}
       <section id="calculator" className="py-16 px-6">
         <div className="max-w-6xl mx-auto">
@@ -187,6 +353,9 @@ export default function Home() {
               </div>
               <h3 className="text-xl font-semibold text-gray-900 mb-2">Track Expenses</h3>
               <p className="text-gray-600">Monitor your daily, monthly, and yearly fuel costs with precision.</p>
+              <a href="/fuel-expense" className="inline-flex items-center mt-4 text-blue-600 hover:text-blue-800 font-medium">
+                Calculate Monthly Fuel Cost →
+              </a>
             </div>
             <div className="text-center p-6 bg-white rounded-2xl shadow-lg hover:shadow-xl transition-shadow">
               <div className="w-12 h-12 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-xl flex items-center justify-center mx-auto mb-4">
@@ -196,6 +365,9 @@ export default function Home() {
               </div>
               <h3 className="text-xl font-semibold text-gray-900 mb-2">Get Insights</h3>
               <p className="text-gray-600">Receive personalized recommendations to optimize your fuel expenses.</p>
+              <a href="/fuel-impact" className="inline-flex items-center mt-4 text-blue-600 hover:text-blue-800 font-medium">
+                See Fuel Impact on Salary →
+              </a>
             </div>
             <div className="text-center p-6 bg-white rounded-2xl shadow-lg hover:shadow-xl transition-shadow">
               <div className="w-12 h-12 bg-gradient-to-r from-purple-500 to-pink-500 rounded-xl flex items-center justify-center mx-auto mb-4">
@@ -205,6 +377,9 @@ export default function Home() {
               </div>
               <h3 className="text-xl font-semibold text-gray-900 mb-2">Save Money</h3>
               <p className="text-gray-600">Discover cost-saving opportunities and alternative transportation options.</p>
+              <a href="/petrol-vs-ev-cost" className="inline-flex items-center mt-4 text-blue-600 hover:text-blue-800 font-medium">
+                Compare EV vs Petrol →
+              </a>
             </div>
           </div>
         </div>

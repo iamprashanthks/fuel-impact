@@ -41,6 +41,12 @@ export default function FuelExpensePage() {
                 Are you wondering how much you&apos;re spending on fuel every month? Our free fuel expense calculator helps you calculate your monthly fuel costs based on your daily driving habits, vehicle mileage, and current fuel prices in India.
               </p>
 
+              <div className="mb-8 p-4 bg-blue-50 border border-blue-200 rounded-xl">
+                <p className="text-blue-800 font-medium">
+                  💡 Want to see how fuel impacts your salary percentage? <a href="/fuel-impact" className="text-blue-600 hover:text-blue-800 underline">Check our Fuel Impact Calculator →</a>
+                </p>
+              </div>
+
               <div className="grid md:grid-cols-2 gap-8 mb-12">
                 <div className="bg-gradient-to-br from-green-50 to-emerald-50 p-6 rounded-2xl border border-green-100">
                   <h3 className="text-xl font-semibold text-green-800 mb-4 flex items-center">
