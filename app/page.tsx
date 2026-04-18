@@ -15,7 +15,7 @@ export default function Home() {
                 alt="Fuel Impact Logo"
                 width={32}
                 height={32}
-                className="w-8 h-8"
+                className="w-8 h-8 rounded-lg"
               />
               <span className="text-xl font-bold text-slate-900">Fuel Impact</span>
             </div>

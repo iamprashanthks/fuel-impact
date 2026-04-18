@@ -1,4 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
+import { Fuel } from 'lucide-react';
 
 interface InputFieldProps {
   label: string;
@@ -26,11 +27,7 @@ const getIcon = (iconName?: string) => {
         </svg>
       );
     case 'fuel':
-      return (
-        <svg className="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 21h10a2 2 0 002-2V9.414a2 2 0 00-.586-1.414l-3.414-3.414A2 2 0 0014.586 4H14V3a1 1 0 00-1-1H9a1 1 0 00-1 1v1H9.414a2 2 0 011.414.586l3.414 3.414A2 2 0 0114 9.414V19H7v2zM9 4h4M9 8h3m-3 4h3" />
-        </svg>
-      );
+      return <Fuel className="w-5 h-5 text-gray-400" />;
     case 'calendar':
       return (
         <svg className="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
