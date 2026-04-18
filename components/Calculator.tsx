@@ -1,9 +1,9 @@
 'use client';
 
-import React, { useState, useEffect } from 'react';
+import React, { useState, useMemo } from 'react';
 import InputField from './InputField';
 import ResultCard from './ResultCard';
-import { FuelData, FuelResults, calculateFuelCost, getInsight } from '../lib/calculations';
+import { FuelData, calculateFuelCost, getInsight } from '../lib/calculations';
 
 export default function Calculator() {
   const [data, setData] = useState<FuelData>({
@@ -14,18 +14,11 @@ export default function Calculator() {
     monthlyIncome: 50000,
   });
 
-  const [results, setResults] = useState<FuelResults | null>(null);
-
-  useEffect(() => {
-    const calculatedResults = calculateFuelCost(data);
-    setResults(calculatedResults);
-  }, [data]);
+  const results = useMemo(() => calculateFuelCost(data), [data]);
 
   const updateData = (key: keyof FuelData, value: number) => {
     setData(prev => ({ ...prev, [key]: value }));
   };
-
-  if (!results) return <div>Loading...</div>;
 
   return (
     <div className="max-w-4xl mx-auto p-6">

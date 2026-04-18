@@ -17,7 +17,7 @@ export default function FuelExpensePage() {
           </h1>
           <div className="prose prose-lg max-w-none mb-12">
             <p>
-              Are you wondering how much you're spending on fuel every month? Our free fuel expense calculator helps you calculate your monthly fuel costs based on your daily driving habits, vehicle mileage, and current fuel prices in India.
+              Are you wondering how much you&apos;re spending on fuel every month? Our free fuel expense calculator helps you calculate your monthly fuel costs based on your daily driving habits, vehicle mileage, and current fuel prices in India.
             </p>
             <h2>Why Calculate Your Fuel Expenses?</h2>
             <p>

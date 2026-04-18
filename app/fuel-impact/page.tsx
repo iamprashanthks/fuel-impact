@@ -1,9 +1,9 @@
 import Calculator from '../../components/Calculator';
 
 export const metadata = {
-  title: 'Fuel Impact on Salary Calculator | How Much Fuel Costs You Monthly',
-  description: 'Discover what percentage of your salary goes to fuel expenses. Calculate fuel impact on income and get personalized savings tips.',
-  keywords: 'fuel impact on salary, fuel cost percentage, income fuel expenses, fuel savings calculator',
+  title: "Fuel Impact on Salary Calculator | How Much Fuel Costs You Monthly",
+  description: "Discover what percentage of your salary goes to fuel expenses. Calculate fuel impact on income and get personalized savings tips.",
+  keywords: "fuel impact on salary, fuel cost percentage, income fuel expenses, fuel savings calculator",
 };
 
 export default function FuelImpactPage() {
@@ -19,7 +19,7 @@ export default function FuelImpactPage() {
             <p>
               Ever wondered what percentage of your hard-earned salary is going towards fuel expenses? Our fuel impact calculator shows you exactly how much of your income is spent on transportation costs and provides insights to help you save money.
             </p>
-            <h2>Understanding Fuel's Impact on Your Finances</h2>
+            <h2>Understanding Fuel&apos;s Impact on Your Finances</h2>
             <p>
               Fuel expenses can be a significant portion of your monthly budget, especially if you commute long distances or have multiple vehicles. This calculator helps you:
             </p>
@@ -31,7 +31,7 @@ export default function FuelImpactPage() {
             </ul>
             <h2>Fuel Price Trends in India (2026)</h2>
             <p>
-              With fluctuating fuel prices, it's important to track how changes affect your budget. Our calculator uses current market rates to give you accurate estimates.
+              With fluctuating fuel prices, it&apos;s important to track how changes affect your budget. Our calculator uses current market rates to give you accurate estimates.
             </p>
           </div>
         </div>
@@ -50,7 +50,7 @@ export default function FuelImpactPage() {
             <div className="bg-green-50 p-6 rounded-lg">
               <h3 className="text-lg font-semibold text-green-800 mb-2">Low Impact (&lt;5%)</h3>
               <p className="text-green-700">
-                Your fuel expenses are well-managed. You're either driving efficiently or have low commuting needs.
+                Your fuel expenses are well-managed. You&apos;re either driving efficiently or have low commuting needs.
               </p>
             </div>
             <div className="bg-yellow-50 p-6 rounded-lg">
