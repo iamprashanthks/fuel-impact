@@ -67,13 +67,13 @@ export default function Home() {
 
               <div className="space-y-6">
                 <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight text-slate-950 leading-[1.1]">
-                  Fuel Cost Impact Calculator
+                  Fuel Cost Calculator
                 </h1>
                 <h2 className="text-2xl md:text-3xl font-semibold text-slate-700">
                   Know how much fuel is costing your income
                 </h2>
                 <p className="text-xl text-slate-600 max-w-2xl leading-relaxed">
-                  Fuel prices are rising, and many people don't realize how much they actually spend on petrol every month. FuelImpact helps you calculate your fuel expenses and understand how it affects your income, so you can make smarter financial decisions.
+                  Fuel prices are rising, and many people dont realize how much they actually spend on petrol every month. FuelImpact helps you calculate your fuel expenses and understand how it affects your income, so you can make smarter financial decisions.
                 </p>
               </div>
 
