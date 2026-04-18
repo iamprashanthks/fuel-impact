@@ -1,4 +1,6 @@
 import Calculator from '../components/Calculator';
+import Image from 'next/image';
+import { Fuel } from 'lucide-react';
 
 export default function Home() {
   return (
@@ -8,11 +10,13 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-6 py-4">
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-3">
-              <div className="w-8 h-8 rounded-lg bg-gradient-to-r from-blue-500 to-purple-600 flex items-center justify-center">
-                <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
-                </svg>
-              </div>
+              <Image
+                src="/fuel-impact-logo.png"
+                alt="Fuel Impact Logo"
+                width={32}
+                height={32}
+                className="w-8 h-8"
+              />
               <span className="text-xl font-bold text-slate-900">Fuel Impact</span>
             </div>
             <div className="flex items-center gap-4">
@@ -56,9 +60,7 @@ export default function Home() {
             <div className="space-y-10">
               <div className="inline-flex items-center gap-3 rounded-full bg-white/95 px-5 py-3 shadow-xl shadow-slate-200/50 ring-1 ring-slate-200/50 backdrop-blur-sm">
                 <span className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-gradient-to-r from-blue-500 to-violet-500 text-white shadow-lg">
-                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
-                  </svg>
+                  <Fuel className="w-5 h-5" />
                 </span>
                 <span className="text-sm font-semibold text-slate-700">Live fuel cost insights for everyday drivers</span>
               </div>
@@ -162,19 +164,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* TL;DR Section */}
-      <section className="py-12 px-6 bg-gradient-to-r from-blue-50 to-purple-50">
-        <div className="max-w-4xl mx-auto text-center">
-          <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-8 shadow-lg">
-            <h3 className="text-2xl font-bold text-gray-900 mb-4">TL;DR</h3>
-            <p className="text-lg text-gray-700 leading-relaxed">
-              FuelImpact helps you calculate how much you spend on fuel daily, monthly, and yearly.
-              It also shows what percentage of your income goes into fuel and gives actionable insights to reduce your expenses.
-            </p>
-          </div>
-        </div>
-      </section>
-
       {/* How it works Section */}
       <section className="py-20 px-6 bg-white/50 backdrop-blur-sm">
         <div className="max-w-6xl mx-auto">
@@ -204,91 +193,10 @@ export default function Home() {
         </div>
       </section>
 
-      {/* What you'll discover Section */}
-      <section className="py-20 px-6">
+      {/* Calculator Section */}
+      <section id="calculator" className="py-16 px-6">
         <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              What you'll discover
-            </h2>
-          </div>
-          <div className="grid md:grid-cols-4 gap-8">
-            <div className="text-center p-6 bg-white rounded-2xl shadow-lg">
-              <div className="w-12 h-12 bg-gradient-to-r from-green-500 to-emerald-500 rounded-xl flex items-center justify-center mx-auto mb-4">
-                <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
-                </svg>
-              </div>
-              <h3 className="text-xl font-semibold text-gray-900 mb-2">Daily fuel cost</h3>
-            </div>
-            <div className="text-center p-6 bg-white rounded-2xl shadow-lg">
-              <div className="w-12 h-12 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-xl flex items-center justify-center mx-auto mb-4">
-                <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
-                </svg>
-              </div>
-              <h3 className="text-xl font-semibold text-gray-900 mb-2">Monthly petrol expense</h3>
-            </div>
-            <div className="text-center p-6 bg-white rounded-2xl shadow-lg">
-              <div className="w-12 h-12 bg-gradient-to-r from-purple-500 to-pink-500 rounded-xl flex items-center justify-center mx-auto mb-4">
-                <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
-                </svg>
-              </div>
-              <h3 className="text-xl font-semibold text-gray-900 mb-2">Yearly fuel spending</h3>
-            </div>
-            <div className="text-center p-6 bg-white rounded-2xl shadow-lg">
-              <div className="w-12 h-12 bg-gradient-to-r from-orange-500 to-red-500 rounded-xl flex items-center justify-center mx-auto mb-4">
-                <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z" />
-                </svg>
-              </div>
-              <h3 className="text-xl font-semibold text-gray-900 mb-2">Percentage of income spent on fuel</h3>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Why this matters Section */}
-      <section className="py-20 px-6 bg-white/50 backdrop-blur-sm">
-        <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              Why this matters
-            </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Fuel is one of the biggest recurring expenses for individuals and businesses. In India, fuel contributes significantly to transportation and logistics costs, making it a critical financial factor.
-            </p>
-          </div>
-          <div className="grid md:grid-cols-3 gap-8">
-            <div className="text-center p-6 bg-white rounded-2xl shadow-lg">
-              <div className="w-12 h-12 bg-gradient-to-r from-green-500 to-emerald-500 rounded-xl flex items-center justify-center mx-auto mb-4">
-                <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
-                </svg>
-              </div>
-              <h3 className="text-xl font-semibold text-gray-900 mb-2">Optimize travel</h3>
-              <p className="text-gray-600">Reduce unnecessary expenses by understanding your fuel consumption patterns.</p>
-            </div>
-            <div className="text-center p-6 bg-white rounded-2xl shadow-lg">
-              <div className="w-12 h-12 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-xl flex items-center justify-center mx-auto mb-4">
-                <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
-                </svg>
-              </div>
-              <h3 className="text-xl font-semibold text-gray-900 mb-2">Plan better financial decisions</h3>
-              <p className="text-gray-600">Make informed choices about transportation and budget allocation.</p>
-            </div>
-            <div className="text-center p-6 bg-white rounded-2xl shadow-lg">
-              <div className="w-12 h-12 bg-gradient-to-r from-purple-500 to-pink-500 rounded-xl flex items-center justify-center mx-auto mb-4">
-                <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                </svg>
-              </div>
-              <h3 className="text-xl font-semibold text-gray-900 mb-2">Save money</h3>
-              <p className="text-gray-600">Discover cost-saving opportunities and alternative transportation options.</p>
-            </div>
-          </div>
+          <Calculator />
         </div>
       </section>
 
@@ -323,13 +231,6 @@ export default function Home() {
               <p className="text-gray-600">Fuel prices are affected by global oil supply, geopolitical events, and demand fluctuations.</p>
             </div>
           </div>
-        </div>
-      </section>
-
-      {/* Calculator Section */}
-      <section id="calculator" className="py-16 px-6">
-        <div className="max-w-6xl mx-auto">
-          <Calculator />
         </div>
       </section>
 

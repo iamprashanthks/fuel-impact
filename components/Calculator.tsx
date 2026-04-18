@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState, useMemo } from 'react';
+import { Fuel } from 'lucide-react';
 import InputField from './InputField';
 import ResultCard from './ResultCard';
 import { FuelData, calculateFuelCost, getInsight, getMarketInsight } from '../lib/calculations';
@@ -36,9 +37,7 @@ export default function Calculator() {
       <div className="bg-gradient-to-r from-blue-600 to-purple-600 p-8 text-white">
         <div className="flex items-center justify-center mb-4">
           <div className="w-12 h-12 bg-white/20 rounded-xl flex items-center justify-center mr-3">
-            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z" />
-            </svg>
+            <Fuel className="w-6 h-6" />
           </div>
           <h2 className="text-2xl md:text-3xl font-bold">Fuel Cost Calculator</h2>
         </div>

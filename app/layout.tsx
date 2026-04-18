@@ -37,6 +37,7 @@ export default function RootLayout({
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
       <head>
+        <link rel="icon" href="/fuel-impact-logo.png" type="image/png" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
