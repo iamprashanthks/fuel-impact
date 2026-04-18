@@ -28,6 +28,12 @@ export function calculateFuelCost(data: FuelData): FuelResults {
   };
 }
 
+export interface MarketInsight {
+  headline: string;
+  spotPrice: string;
+  note: string;
+}
+
 export function getInsight(incomePercentage: number): string {
   if (incomePercentage < 5) {
     return "Your fuel expenses are low. Great job on efficiency!";
@@ -38,4 +44,16 @@ export function getInsight(incomePercentage: number): string {
   } else {
     return "Your fuel expenses are very high. Consider switching to an electric vehicle.";
   }
+}
+
+export function getMarketInsight(incomePercentage: number): MarketInsight {
+  const price = 82 + (new Date().getDate() % 6) * 0.8;
+  return {
+    headline: 'Market Watch',
+    spotPrice: `Brent crude ~ $${price.toFixed(2)} / barrel`,
+    note:
+      incomePercentage > 12
+        ? 'Oil prices are under pressure from Middle East tensions and global supply risks. Your current fuel spend is already high — consider cutting discretionary trips.'
+        : 'Fuel markets remain volatile due to geopolitical uncertainty. Keep an eye on price trends before planning longer trips.',
+  };
 }

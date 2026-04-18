@@ -3,7 +3,7 @@
 import React, { useState, useMemo } from 'react';
 import InputField from './InputField';
 import ResultCard from './ResultCard';
-import { FuelData, calculateFuelCost, getInsight } from '../lib/calculations';
+import { FuelData, calculateFuelCost, getInsight, getMarketInsight } from '../lib/calculations';
 
 export default function Calculator() {
   const [data, setData] = useState<FuelData>({
@@ -13,8 +13,19 @@ export default function Calculator() {
     daysPerMonth: 20,
     monthlyIncome: 50000,
   });
+  const [compareEnabled, setCompareEnabled] = useState(false);
+  const [previousFuelPrice, setPreviousFuelPrice] = useState(90);
 
   const results = useMemo(() => calculateFuelCost(data), [data]);
+  const previousResults = useMemo(
+    () => calculateFuelCost({ ...data, fuelPrice: previousFuelPrice }),
+    [data, previousFuelPrice]
+  );
+  const marketInsight = useMemo(() => getMarketInsight(results.incomePercentage), [results.incomePercentage]);
+  const personalInsight = useMemo(() => getInsight(results.incomePercentage), [results.incomePercentage]);
+
+  const monthlyDifference = results.monthlyCost - previousResults.monthlyCost;
+  const monthlyDifferenceLabel = monthlyDifference <= 0 ? 'You saved' : 'You spent more';
 
   const updateData = (key: keyof FuelData, value: number) => {
     setData(prev => ({ ...prev, [key]: value }));
@@ -97,6 +108,36 @@ export default function Calculator() {
                 icon="wallet"
               />
             </div>
+
+            <div className="mt-6 bg-slate-50 p-6 rounded-3xl border border-slate-200 shadow-sm">
+              <div className="flex items-center justify-between gap-4">
+                <div>
+                  <h4 className="text-lg font-semibold text-gray-900">Compare Previous Fuel Price</h4>
+                  <p className="text-sm text-gray-500">Toggle to compare your current fuel cost with a previous fuel price.</p>
+                </div>
+                <button
+                  type="button"
+                  onClick={() => setCompareEnabled((current) => !current)}
+                  className={`relative inline-flex h-7 w-14 items-center rounded-full transition-colors duration-300 ${compareEnabled ? 'bg-emerald-500' : 'bg-slate-300'}`}
+                >
+                  <span className={`inline-block h-5 w-5 transform rounded-full bg-white transition-transform duration-300 ${compareEnabled ? 'translate-x-7' : 'translate-x-1'}`} />
+                </button>
+              </div>
+
+              {compareEnabled && (
+                <div className="mt-6">
+                  <InputField
+                    label="Previous Fuel Price"
+                    value={previousFuelPrice}
+                    onChange={(value) => setPreviousFuelPrice(value)}
+                    placeholder="90"
+                    unit="₹/l"
+                    min={1}
+                    icon="fuel"
+                  />
+                </div>
+              )}
+            </div>
           </div>
 
           {/* Results */}
@@ -141,17 +182,45 @@ export default function Calculator() {
               />
             </div>
 
-            {/* Insight */}
+            {compareEnabled && (
+              <div className="bg-slate-50 p-6 rounded-3xl border border-slate-200 shadow-sm">
+                <h4 className="text-lg font-semibold text-gray-900 mb-4">Comparison Summary</h4>
+                <div className="grid gap-4">
+                  <div className="rounded-2xl bg-white p-4 border border-slate-200">
+                    <p className="text-sm text-gray-500">Current Monthly Cost</p>
+                    <p className="text-2xl font-bold text-gray-900">₹{results.monthlyCost}</p>
+                  </div>
+                  <div className="rounded-2xl bg-white p-4 border border-slate-200">
+                    <p className="text-sm text-gray-500">Previous Monthly Cost</p>
+                    <p className="text-2xl font-bold text-gray-900">₹{previousResults.monthlyCost}</p>
+                  </div>
+                  <div className="rounded-2xl bg-white p-4 border border-slate-200">
+                    <p className="text-sm text-gray-500">Price Comparison</p>
+                    <div className="flex items-center gap-2 mt-2">
+                      <span className={`text-2xl font-bold ${monthlyDifference <= 0 ? 'text-emerald-600' : 'text-red-600'}`}>
+                        {monthlyDifference <= 0 ? '↓' : '↑'} ₹{Math.abs(monthlyDifference).toFixed(2)}
+                      </span>
+                    </div>
+                    <p className={`text-sm mt-1 ${monthlyDifference <= 0 ? 'text-emerald-600' : 'text-red-600'}`}>
+                      {monthlyDifference <= 0 ? 'You saved per month' : 'You spent more per month'}
+                    </p>
+                  </div>
+                </div>
+              </div>
+            )}
+
             <div className="bg-gradient-to-r from-blue-50 to-purple-50 p-6 rounded-2xl border border-blue-100">
-              <div className="flex items-start">
-                <div className="w-10 h-10 bg-gradient-to-r from-blue-500 to-purple-500 rounded-xl flex items-center justify-center mr-4 flex-shrink-0">
-                  <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+              <div className="flex items-start gap-4">
+                <div className="w-12 h-12 rounded-3xl bg-gradient-to-br from-blue-500 to-violet-600 flex items-center justify-center text-white shadow-lg shadow-blue-200/50">
+                  <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 3v5m0 8v5m8.66-6.34l-4.95 4.95M6.34 6.34l-4.95 4.95M21 12h-5M8 12H3" />
                   </svg>
                 </div>
                 <div>
-                  <h4 className="font-semibold text-gray-800 mb-2">💡 Smart Insight</h4>
-                  <p className="text-gray-700 leading-relaxed">{getInsight(results.incomePercentage)}</p>
+                  <h4 className="font-semibold text-gray-900 mb-2">{marketInsight.headline}</h4>
+                  <p className="text-xl font-semibold text-slate-900 mb-1">{marketInsight.spotPrice}</p>
+                  <p className="text-gray-700 leading-relaxed">{marketInsight.note}</p>
+                  <p className="mt-4 text-sm text-slate-600">{personalInsight}</p>
                 </div>
               </div>
             </div>

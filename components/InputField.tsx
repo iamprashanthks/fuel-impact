@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 
 interface InputFieldProps {
   label: string;
@@ -28,7 +28,7 @@ const getIcon = (iconName?: string) => {
     case 'fuel':
       return (
         <svg className="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l7 7m-7-7h14M3 3h7l4 4-7 7-4-4z" />
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 21h10a2 2 0 002-2V9.414a2 2 0 00-.586-1.414l-3.414-3.414A2 2 0 0014.586 4H14V3a1 1 0 00-1-1H9a1 1 0 00-1 1v1H9.414a2 2 0 011.414.586l3.414 3.414A2 2 0 0114 9.414V19H7v2zM9 4h4M9 8h3m-3 4h3" />
         </svg>
       );
     case 'calendar':
@@ -58,6 +58,35 @@ export default function InputField({
   max,
   icon,
 }: InputFieldProps) {
+  const [inputValue, setInputValue] = useState(value.toString());
+  const inputRef = useRef<HTMLInputElement>(null);
+
+  useEffect(() => {
+    if (document.activeElement !== inputRef.current) {
+      setInputValue(value.toString());
+    }
+  }, [value]);
+
+  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const nextValue = event.target.value;
+    setInputValue(nextValue);
+
+    if (nextValue === '') {
+      return;
+    }
+
+    const parsed = parseFloat(nextValue);
+    if (!Number.isNaN(parsed)) {
+      onChange(parsed);
+    }
+  };
+
+  const handleBlur = () => {
+    if (inputValue === '') {
+      setInputValue(value.toString());
+    }
+  };
+
   return (
     <div className="group">
       <label className="block text-sm font-medium text-gray-700 mb-2 group-focus-within:text-blue-600 transition-colors">
@@ -70,9 +99,11 @@ export default function InputField({
           </div>
         )}
         <input
+          ref={inputRef}
           type="number"
-          value={value}
-          onChange={(e) => onChange(parseFloat(e.target.value) || 0)}
+          value={inputValue}
+          onChange={handleChange}
+          onBlur={handleBlur}
           placeholder={placeholder}
           min={min}
           max={max}
