@@ -14,15 +14,27 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://fuel-impact.vercel.app"),
   title: "Fuel Cost Impact Calculator (India 2026) – Know Your Monthly Petrol Expense",
   description: "Calculate your daily, monthly, and yearly fuel cost instantly. Discover how much of your income goes to petrol and get smart insights to reduce expenses. Free tool for India 2026.",
   keywords: "fuel cost calculator india, petrol expense calculator, fuel impact on salary, monthly fuel cost, petrol price impact",
   authors: [{ name: "Prashanth" }],
+  icons: {
+    icon: "/favicon.ico",
+  },
   openGraph: {
     title: "Fuel Cost Impact Calculator",
     description: "Calculate your fuel expenses and see how it affects your income",
     type: "website",
     url: "https://fuel-impact.vercel.app/",
+    images: [
+      {
+        url: "/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "Fuel Cost Impact Calculator",
+      },
+    ],
   },
 };
 
@@ -37,7 +49,6 @@ export default function RootLayout({
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
       <head>
-        <link rel="icon" href="/fuel-impact-logo.png" type="image/png" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
